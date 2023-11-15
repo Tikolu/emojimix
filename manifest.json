@@ -1,0 +1,85 @@
+{
+	"name": "emojimix",
+	"short_name": "emojimix",
+	"description": "Combine two emojis into one - thousands of combinations are available!\nSave your favourite combinations and share them with your friends.\nVote for your favourites and compete for the #1 spot on the daily leaderboard.",
+	"id": "emojimix",
+	"start_url": "/emojimix/?action=pwa",
+	"scope": "/emojimix/",
+	"orientation": "portrait",
+	"display": "standalone",
+	"background_color": "#ffffff",
+	"theme_color": "#6e823a",
+	"icons": [
+		{
+			"src": "/emojimix/icons/meowtle.png",
+			"sizes": "534x534",
+			"type": "image/png",
+			"purpose": "any"
+		},
+		{
+			"src": "/emojimix/icons/maskable.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "maskable"
+		}
+	],
+	"screenshots": [
+		{
+			"src": "/emojimix/screenshots/screenshot1.png",
+			"sizes": "1080x2340",
+			"type": "image/png",
+			"platform": "narrow"
+		},
+		{
+			"src": "/emojimix/screenshots/screenshot2.png",
+			"sizes": "1080x2340",
+			"type": "image/png",
+			"platform": "narrow"
+		},
+		{
+			"src": "/emojimix/screenshots/screenshot3.png",
+			"sizes": "1080x2340",
+			"type": "image/png",
+			"platform": "narrow"
+		},
+		{
+			"src": "/emojimix/screenshots/screenshot4.png",
+			"sizes": "1080x2340",
+			"type": "image/png",
+			"platform": "narrow"
+		},
+		{
+			"src": "/emojimix/screenshots/screenshot5.png",
+			"sizes": "1080x2340",
+			"type": "image/png",
+			"platform": "narrow"
+		},
+		{
+			"src": "/emojimix/screenshots/screenshot6.png",
+			"sizes": "1080x2340",
+			"type": "image/png",
+			"platform": "narrow"
+		},
+		{
+			"src": "/emojimix/screenshots/screenshot7.png",
+			"sizes": "1080x2340",
+			"type": "image/png",
+			"platform": "narrow"
+		}
+	],
+	"shortcuts": [
+		{
+			"name": "Favourites",
+			"url": "/emojimix/?action=favourites",
+			"description": "Favourited emoji combinations",
+			"icons": [
+				{
+					"src": "/emojimix/icons/love.png",
+					"sizes": "534x534",
+					"type": "image/png",
+					"purpose": "any"
+				}
+			]
+		}
+	]
+}

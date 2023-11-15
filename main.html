@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<!-- Built by Tikolu using Google's emoji API -->
+<!-- https://tenor.googleapis.com/v2/featured -->
+
+<html lang="en" dir="ltr">
+	<head>
+		<title>emojimix by Tikolu</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, interactive-widget=resizes-content, user-scalable=no">
+		<meta name="theme-color" content="#6e823a">
+		<meta name="description" content="Combine two emojis into one. Thousands of combinations are available.">
+		<meta name="google" content="notranslate">
+		<link rel="stylesheet" href="style.css">
+		<link rel="icon" href="icons/meowtle.png">
+		<link rel="apple-touch-icon" href="icons/meowtle.png">
+		<link rel="canonical" href="https://tikolu.net/emojimix/">
+		<link rel="manifest" href="manifest.json">
+		<script src="core.js"></script>
+		<script src="emojis.js"></script>
+		<script src="script.js" defer></script>
+	</head>
+	<body>
+		<img src="icons/meowtle.png" hidden>
+		<h1>emojimix</h1>
+		<div id="load-section">
+			<div class="tikolu-logo">Tikolu</div>
+			<div id="loading-credit">All emoji illustrations by Google</div>
+		</div>
+		<main hidden>
+			<nav>
+				<a class="selected">mix</a>
+				<a>top</a>
+				<hr>
+			</nav>
+			<div id="scroller">
+				<div>
+					<section id="mix">
+						<div id="sliders">
+							<div class="slider-buttons">
+								<div class="button search" id="search1" title="Search" onclick="searchPopup.show(slider1)"></div>
+								<div class="button random" id="random1" title="Shuffle" onclick="slider1.random(true)"></div>
+							</div>
+							<div class="slider-container">
+								<div class="slider" id="slider1"></div>
+							</div>
+							<div>+</div>
+							<div class="slider-container">
+								<div class="slider" id="slider2"></div>
+							</div>
+							<div class="slider-buttons">
+								<div class="button search" id="search2" title="Search" onclick="searchPopup.show(slider2)"></div>
+								<div class="button random" id="random2" title="Shuffle" onclick="slider2.random(true)"></div>
+							</div>
+						</div>
+						<div id="emoji-display" title="Click here to randomize">
+							<img id="output" draggable="false" hidden>
+							<div id="sad-turtle" hidden></div>
+							<p id="information" hidden></p>
+						</div>
+						<div id="sharing-buttons">
+							<div id="copy-image" class="button" title="Copy image" onclick="copyImage()" oncontextmenu="triggerDownload(event)"></div>
+							<div id="heart-button" class="button" title="Add to favourites"></div>
+							<div id="share-button" class="button" title="Share"></div>
+						</div>
+					</section>
+					<section id="favourites">
+						<div id="favourites-settings">
+							<div class="global-icon" style="background-image: url(icons/person.svg)" onclick="globalSwitch.click()" title="Switch between personal and global favourites"></div>
+							<div id="global-switch" class="switch" title="Switch between personal and global favourites"></div>
+							<div class="global-icon" style="background-image: url(icons/people.svg)" onclick="globalSwitch.click()" title="Switch between personal and global favourites"></div>
+							<div id="refresh-global" title="Refresh"></div>
+							<div id="category-selection" class="hidden">
+								<div target-category="all">all time</div>
+								<div target-category="day">today</div>
+							</div>
+							<div id="reset-countdown">Reset in</div>
+						</div>
+						<div id="favourites-grid"></div>
+					</section>
+				</div>
+			</div>
+			<div id="credits">
+				<p id="bottom-links">
+					<!-- <a href="feedback">Share feedback</a> -->
+					<a onclick="settingsPopup.open()">Settings</a>
+					<a onclick="infoPopup.open()">Credits</a>
+					<a href="projects" target="_blank">More projects</a>
+				</p>
+			</div>
+			<div id="cover" hidden>
+				<div id="cover-skip" onclick="tutorial.skip()">Skip tutorial</div>
+				<div id="cover-text"></div>
+				<div id="cover-circle"></div>
+			</div>
+		</main>
+		<div class="popup" id="search-popup" hidden>
+			<div id="search-popup-error" hidden>No results</div>
+			<div id="search-popup-content"></div>
+			<input type="text" id="search-box" placeholder="Search for emojis..." enterkeyhint="search" autocomplete="off">
+		</div>
+		<div class="popup" id="info-popup" hidden>
+			<h2>emojimix by Tikolu</h2>
+			<p>Great thanks to the following people for their generous support during the start of emojimix's development:</p>
+			<div id="donation-list">
+				<p>Lori Ogbuji</p>
+				<p>Igor Nusinovich</p>
+				<p>Ken Alba</p>
+				<p>Nyron Ali</p>
+				<p>Michael Gintz</p>
+				<p>David O'Heare</p>
+				<p>Jordyn Bonds</p>
+				<p>Shawn Edmondson</p>
+				<p>Xueping Ma</p>
+				<p>Magdalena Pabian</p>
+				<p>Kirill Mokhovtsev</p>
+				<p>Richard Gomez</p>
+				<p>Alex Gorischek</p>
+				<p>Christian Schiling</p>
+			</div>
+			<p id="bitcoin-thank">And all of the anonymous Bitcoin donators</p>
+			<br>
+			<p>emojimix uses illustrations from Google's <a href="https://youtu.be/yYgYE30FfGA">Emoji Kitchen</a></p>
+			<p>Font: <a href="https://fonts.google.com/specimen/Nunito">Nunito</a> by Vernon Adams<br>Icons: <a href="https://fonts.google.com/icons">Google Material</a></p>
+			<p>Thanks to Aoife for developing and testing the search system</p>
+			<p>All web design, development and coding by <a href="/">Tikolu</a></p>
+			<div class="button" onclick="infoPopup.classList.add('fade-out')">Return</div>
+		</div>
+		<div class="popup" id="settings-popup" hidden>
+			<h2>Settings</h2>
+			<div class="setting">
+				<p>Sound Effects</p>
+				<div id="sound-switch" class="switch on"></div>
+			</div>
+			<div class="setting">
+				<p>Vibrations</p>
+				<div id="vibration-switch" class="switch on"></div>
+			</div>
+			<div class="setting">
+				<p>Animated emojis</p>
+				<div id="animation-switch" class="switch on"></div>
+			</div>
+			<div class="setting">
+				<p>Theme</p>
+				<select id="theme-select">
+					<option value="system">System (auto)</option>
+					<option value="light">Light</option>
+					<option value="dark">Dark</option>
+				</select>
+			</div>
+			<div id="settings-buttons">
+				<div class="button" onclick="tutorial.restart()">Restart Tutorial</div>
+				<div class="button" onclick="resetStorage()">Clear Favourites</div>
+				<div class="button" onclick="exportStorage()">Export Favourites</div>
+				<div class="button" onclick="importStorage()">Import Favourites</div>
+			</div>
+			<div class="button" onclick="settingsPopup.classList.add('fade-out')">Return</div>
+		</div>
+	</body>
+</html>
